@@ -1,7 +1,22 @@
 <div id="<%= dom_id post %>">
   <p>
-    <strong>Img:</strong>
-    <%= post.img %>
+    
+    
+    <%if post.image.attached?%>
+        <%=image_tag post.image ,width: "300px" ,class: " img-thumbnail selector"%>
+
+    <%end%>
   </p>
 
 </div>
+
+<style>
+.selector {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+</style>
