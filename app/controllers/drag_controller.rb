@@ -1,9 +1,15 @@
 class DragController < ApplicationController
-    def post 
+    def post
+        @post = Project.find(drag_post_params[:id])
+        @post.insert_at(drag_post_params[:position]to_i + 1 )
+    
+
+    
+    end 
 
 
 
-    end
+    
     
 
     private
