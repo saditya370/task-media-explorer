@@ -6,7 +6,7 @@
 <%= render partial: "posts/form",locals: {post: Post.new}%>
 </div>
 <div id="posts">
-  <% @posts.each do |post| %>
+  <% @p.each do |post| %>
     <%# <%= render post %>
     <%= render "posts/draggable",post: post%>
   

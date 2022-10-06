@@ -3,7 +3,24 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all.order(position: :asc)
+    # @posts = Post.all.order(position: :asc)
+     @posts = Post.all.order(position: :asc)
+     
+     
+     @post = params[:check]
+     if @post == "0" 
+      @p =   @posts.sort_by(&:created_at)
+      
+    elsif @post == "1"
+      @p =   @posts.sort_by(&:created_at).reverse
+      
+    else 
+      @p = Post.all.order(position: :asc)
+      
+  end
+
+    
+  
   end
 
   # GET /posts/1 or /posts/1.json

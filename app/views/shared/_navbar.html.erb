@@ -2,7 +2,6 @@
   <div class="container-fluid">
   
 
-    <%=link_to "Home" ,root_path%>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,7 +10,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         
-        \
+    
+             <li class="nav-item">
+          <%=link_to "Drag Photos",posts_path,class: "nav-link"%>
+        </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Sort Photos
@@ -19,8 +22,8 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%# <li><a class="dropdown-item" href="/posts/sort">Created by(asc)</a></li> %>
         
-            <li><%=link_to "created(asc)",posts_sort_path(:params => { :check => 0 }),class:"dropdown-item"%></li>
-             <li><%=link_to "created(desc)",posts_sort_path(:params => { :check => 1 }),class:"dropdown-item"%></li>
+            <li><%=link_to "created(asc)",posts_path(:params => { :check => 0 }),class:"dropdown-item"%></li>
+             <li><%=link_to "created(desc)",posts_path(:params => { :check => 1 }),class:"dropdown-item"%></li>
           </ul>
         </li>
      
@@ -29,7 +32,7 @@
 
 
 
-
+</ul>
     </div>
   </div>
 </nav>
