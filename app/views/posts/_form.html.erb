@@ -11,12 +11,21 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :img, style: "display: block" %>
+  <div class = "my-3"style="margin-left: 200px;">
+    <%# <%= form.label :img, style: "display: block" %>
+  
+    
+    <span>
     <%= form.file_field :image %>
-  </div>
+     <br>
+    </span>
+    
+    <span >   
+    
+    <%= form.submit "Add Pic" ,class:"btn btn-secondary" %>
+    
+    </span>
 
-  <div>
-    <%= form.submit %>
+  
   </div>
 <% end %>

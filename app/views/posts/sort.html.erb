@@ -1,7 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
-<%= link_to "New post", new_post_path %>
-<h1>Posts</h1>
+<%# <%= link_to "New post", new_post_path %> 
+<%# <h1>Posts</h1> %>
+
+<div id="new_post">
+<h1>Add Pictures</h1>
+<%= render partial: "posts/form",locals: {post: Post.new}%>
+</div>
 
 
 
