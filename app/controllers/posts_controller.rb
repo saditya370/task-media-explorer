@@ -10,6 +10,18 @@ class PostsController < ApplicationController
   def show
   end
 
+  def sort 
+
+    @posts = Post.all
+    @post = params[:check]
+    if @post == "0" 
+      @p =   @posts.sort_by(&:created_at)
+    
+  else 
+    @p =   @posts.sort_by(&:created_at).reverse
+  end
+  end
+
   # GET /posts/new
   def new
     @post = Post.new

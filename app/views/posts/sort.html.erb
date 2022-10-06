@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<%= link_to "New post", new_post_path %>
+<h1>Posts</h1>
+
+
+
+<%# <%@p =   @posts.sort_by(&:created_at).reverse%>
+
+
+
+
+<div id="posts">
+  <% @p.each do |post| %>
+    <%# <%= render post %>
+    <%= render "posts/draggable",post: post%>
+  
+  <% end %>
+</div>
+
+  
+  
+      <%# <%= link_to "Show this post", post %>
+
+      <style>
+#posts{
+  display: flex;
+  flex-wrap: wrap;
+}
+</style>
