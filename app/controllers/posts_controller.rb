@@ -51,8 +51,8 @@ class PostsController < ApplicationController
   # POST /posts or /posts.json
   def create
     @post = Post.new
-    b =  post_params[:photo]
-    b.each do |a|
+    image_array =  post_params[:photo]
+    image_array.each do |a|
       if(a == "")
         next
       end
