@@ -72,9 +72,11 @@ class PostsController < ApplicationController
                                                   locals: { post: @post })     
                              ]
         end
-
+      
+      
         format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
         format.json { render :show, status: :created, location: @post }
+        
       else
 
         format.turbo_stream do
@@ -88,6 +90,7 @@ class PostsController < ApplicationController
       end
     end
   end
+
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
