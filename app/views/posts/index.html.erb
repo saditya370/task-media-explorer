@@ -1,8 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
 <%# <%= link_to "New post", new_post_path %> 
-<div id="new_post">
 <h1>Add Pictures</h1>
+<div id="new_post">
 <%= render partial: "posts/form",locals: {post: Post.new}%>
 </div>
 <div id="posts">
@@ -22,4 +22,5 @@
   display: flex;
   flex-wrap: wrap;
 }
+
 </style>

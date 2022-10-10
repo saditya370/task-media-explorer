@@ -67,14 +67,16 @@ class PostsController < ApplicationController
                                                 partial: "posts/form",
                                                 locals: { post: Post.new }),
 
-                             turbo_stream.append('posts', 
+                             turbo_stream.prepend('posts', 
                                                   partial: "posts/post",
                                                   locals: { post: @post })     
                              ]
+                             
         end
       
       
         format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
+        
         format.json { render :show, status: :created, location: @post }
         
       else
@@ -88,8 +90,9 @@ class PostsController < ApplicationController
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
-    end
+    
   end
+end
 
 
   # PATCH/PUT /posts/1 or /posts/1.json
